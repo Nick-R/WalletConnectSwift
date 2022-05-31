@@ -13,6 +13,10 @@ open class WalletConnect {
         case missingWalletInfoInSession
     }
 
+    open func isConnected(to url: WCURL?) -> Bool {
+        url != nil && communicator.isConnected(by: url!)
+    }
+
     /// Connect to WalletConnect url
     /// https://docs.walletconnect.org/tech-spec#requesting-connection
     ///
